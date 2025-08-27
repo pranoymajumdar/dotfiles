@@ -59,5 +59,7 @@ esac
 # bun completions end
 
 # fastfetch
-fastfetch
+if [[ -n $PS1 ]]; then
+  fastfetch
+fi
 # fastfetch end
