@@ -2,13 +2,20 @@
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh_history
-setopt hist_ignore_dups
 # History settings end
 
 # Prompt
-PROMPT='%F{cyan}%n@%m%f %F{yellow}%1~%f %# '
-# PROMPT='%n@%m %1~ %# '
+setopt hist_ignore_dups
+setopt PROMPT_SUBST
+
+git_prompt_info() {
+  local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [[ -n "$branch" ]] && echo " %F{green} $branch%f"
+}
+PS1='%F{blue} %2~%f$(git_prompt_info) %(?.%F{green}.%F{red}✘)%f '
 # Prompt end
+
+
 
 # Enable completion system
 autoload -Uz compinit && compinit
