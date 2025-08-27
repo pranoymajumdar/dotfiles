@@ -2,10 +2,10 @@
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh_history
+setopt hist_ignore_dups
 # History settings end
 
 # Prompt
-setopt hist_ignore_dups
 setopt PROMPT_SUBST
 
 git_prompt_info() {
