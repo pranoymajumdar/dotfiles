@@ -53,13 +53,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# bun completions
-[ -s "/home/pranoy/.bun/_bun" ] && source "/home/pranoy/.bun/_bun"
-# bun completions end
-
-# fastfetch
-if [[ -n $PS1 ]]; then
-  fastfetch
-fi
-# fastfetch end
