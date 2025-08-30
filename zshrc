@@ -15,7 +15,9 @@ git_prompt_info() {
 PS1='%F{blue} %2~%f$(git_prompt_info) %(?.%F{green}.%F{red}✘)%f '
 # Prompt end
 
-
+# Aliases
+alias todo="~/Desktop/todo.sh"
+# Aliases end
 
 # Enable completion system
 autoload -Uz compinit && compinit
@@ -53,3 +55,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+# show todo
+if [[ $- == *i* ]]; then
+    todo list
+fi
+# show todo end
